@@ -1,0 +1,32 @@
+{
+  "name": "BackOffice",
+  "version": "0.1.0",
+  "description": "Backoffice project",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yenier Jimenez <yjmorales86@gmail.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "bootstrap": "^4.4.1",
+    "bootstrap-select": "^1.13.12",
+    "bootstrap4-toggle": "^3.6.1",
+    "get-google-fonts": "^1.2.2",
+    "gulp-babel": "^8.0.0",
+    "@babel/core": "^7.9.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-fontmin": "^0.7.4",
+    "gulp-rename": "^2.0.0",
+    "gulp-terser": "^1.2.0",
+    "gulp-uglify": "^3.0.2",
+    "html5shiv": "^3.7.3",
+    "ionicons": "^4.6.3",
+    "jquery": "^3.4.1",
+    "jquery-slim": "^3.0.0",
+    "popper.js": "^1.16.1",
+    "respond": "^0.9.0"
+  }
+}
