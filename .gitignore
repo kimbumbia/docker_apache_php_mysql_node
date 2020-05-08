@@ -1,0 +1,5 @@
+.idea/
+Thumbs.db
+/public/*
+/vendor/
+/node_modules/
