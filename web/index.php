@@ -1,10 +1,16 @@
 <html>
 <head>
-    <link href="">
+    <title>Docker try</title>
+    <script src="public/compressed.js" ></script>
 </head>
-</html>
-
+<body>
+<div class="container">
+    <h1>Hello world. This is my first Docker Try!</h1>
+    <h4>Each time the page is loaded Three Arguments will be saved to the DB (php, js, java)</h4>
+    <h3>The list of Possibles languages to learn:</h3>
+</div>
 <?php
+
 /**
  * @author Yenier Jimenez <yjmorales86@gmail.com>
  * This in an example about how to use a PHP Docker container by connect to a DB.
@@ -12,14 +18,6 @@
  * - Web App (php app): Belong in a container
  * - DB belong in a container.
  */
-
-// Displaying welcome message
-echo "Hello world, Today is: " . (new DateTime())->format('m/d/Y');
-echo "<hr>";
-echo "<b>Testing Connection to DB</b>";
-
-exit;
-
 // Argument to establish the DB Connection
 $dsn = "mysql:host=db;dbname=testind_docker"; // 'bd' is the name of the defined container which holds the database.
 $user = 'admin_testind_docker';
@@ -53,8 +51,11 @@ $stmt = $pdo->prepare($sqlInsert);
 $stmt->execute(['php', 'js', 'java']);
 
 // Listing values
-echo "</br></br>Listing of Development Languages:";
 $stmt = $pdo->query("SELECT * FROM `language_dev`");
 while ($row = $stmt->fetch()) {
     echo "</br> - {$row['name']}";
 }
+
+?>
+</body>
+</html>

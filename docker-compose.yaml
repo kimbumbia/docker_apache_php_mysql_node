@@ -1,6 +1,6 @@
 version: "3"
 services:
-  web:
+  web:  # Define a container to hold the web application
     container_name: web
     build:
       context: .
@@ -13,7 +13,7 @@ services:
     ports:
       - 8070:80
 
-  db:
+  db: # Holds the Database used by the application.
     container_name: db
     image: mysql:8.0
     command: --default-authentication-plugin=mysql_native_password
@@ -25,7 +25,8 @@ services:
       MYSQL_PASSWORD: admin_testind_docker
     ports:
       - 3307:3306
-  phpmyadmin:
+
+  phpmyadmin: # Holds a web interface to administrate the Database.
     container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
     restart: always
@@ -37,19 +38,19 @@ services:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: admin
 
-  composer:
+  composer: # Holds the composer manager.
     container_name: composer
     image: composer:latest
     command: ["composer", "install"]
     volumes:
       - .:/app
 
-  node:
+  node: # Holds a running installation of node
     container_name: node
     build:
       context: .
       dockerfile: docker/node/Dockerfile
     volumes:
-      - .:/usr/src/app/node_modules
-      - ./web:/usr/src/app/public
-    command: /usr/src/app/entrypoint.sh
+      - .:/usr/src/app/node_modules # Publish `node_modules` folder to the host. Contains those used dependencies (js, css, etc...)
+      - ./web:/usr/src/app/public   # Publish `public` folder to the host Contains those  compressed files used by the application (js, css)
+    command: /usr/src/app/entrypoint.sh 
