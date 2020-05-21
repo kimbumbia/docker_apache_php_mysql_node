@@ -28,4 +28,4 @@ by composer container.
 - install docker 
 
 **Steps to run the containers:**
-- docker-compose up --build -d
+- `docker-compose up --build -d`
