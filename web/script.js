@@ -1,1 +1,1 @@
-alert(123);
+alert('This is an alter to test those compressed file are working as expected');
