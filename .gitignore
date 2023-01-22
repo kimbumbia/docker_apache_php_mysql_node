@@ -3,3 +3,4 @@ Thumbs.db
 /public/*
 /vendor/
 /node_modules/
+/web/public/compressed.js

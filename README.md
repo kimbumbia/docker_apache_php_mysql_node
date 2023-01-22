@@ -1,8 +1,16 @@
-# Setting Up a development environment using Docker containers.
+# Docker + Apache + PHP + Mysql + Node
 
-### In a try about to configure a web development environment its is created the following Docker configurations.
 
-Are used so far the followings Technologies: 
+This project defines a basic docker environment for those web developers that need to work
+with the following stack:
+
+- Apache
+- PHP
+- Mysql
+- Node
+
+### Docker images
+
 - PHP: 7.4 Pulled from the image php:7.4-apache 
 - Apache/2.4.38 (Debian) Pulled from the image php:7.4-apache
 - MySql 8.0 Pulled from the image mysql:8.0
@@ -10,22 +18,22 @@ Are used so far the followings Technologies:
 - PHPMyAdmin: Pulled from the latest image version of the official Image.
 
 
-In addition is created an small Test-Application in order to combine the facilities that offers that technologies.
-Test-App requirements: 
-Each time the index.html page is loaded are going to be saved on DB the records `php` `js` `java` 
+### Demo application
 
+In addition, it is created a small demo application in order to combine the facilities offered by those technologies.
 
-**Structure**:
+#### Scenario:
+There is a webpage named `index.html`. Every time `index.html` is loaded are going to be saved on DB the records 'php' 'js' 'java'. 
 
-1. `composer.json`: Requires the component "illuminate/support" to have access to those defined helpers functions. It's use 
-by composer container.
-2. `package.json:` Requires some components to be used by the test-app
-3. `./web`: Contains the test-app code.  
-4. `./docker`: Contains those Docker files for theirs respective containers
+#### Structure
 
+./web: Contains the test-app code.  
+./docker: Contains those Docker files for theirs respective containers
 
-**Requisites:** 
-- install docker 
+#### Install 
 
-**Steps to run the containers:**
-- `docker-compose up --build -d`
+**Note**: Docker should be installed. 
+
+Run the containers:
+
+    docker-compose up --build -d
